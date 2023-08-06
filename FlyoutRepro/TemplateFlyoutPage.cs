@@ -32,6 +32,10 @@ namespace FlyoutRepro
         #region methods
         private void TemplateFlyoutPage_IsPresentedChanged(object sender,System.EventArgs e)
             {
+//// WORKAROUND - manually call On(Dis)Appearing
+//// Won't be called on Windows if user just clicks on menu again to close it without changing pages
+            if (IsPresented) {OnAppearing();}
+            else {OnDisappearing();}
             System.Diagnostics.Trace.Write($"********************************** {nameof(TemplateFlyoutPage)}.{nameof(IsPresented)} is {IsPresented}\r\n");
             System.Diagnostics.Trace.Write($"********************************** {nameof(TemplateFlyoutPage)}.{nameof(IsVisible)} is {IsVisible}\r\n");
             }
