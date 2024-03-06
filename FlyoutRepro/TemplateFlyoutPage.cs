@@ -47,6 +47,10 @@ namespace FlyoutRepro
                         Detail=HomePage;
                         break;
                     case "Page 2":
+//// Uncomment the "Page2=new..." code and SetTitleView on SecondPage works again
+                        //Page2=new NavigationPage(
+                        //    new SecondPage(AppInfo)
+                        //    );
                         Detail=Page2;
                         break;
                     default:
